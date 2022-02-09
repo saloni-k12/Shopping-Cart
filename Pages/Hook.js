@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet,SafeAreaView, ScrollView, Text, View, Image, TouchableOpacity } from 'react-native'
 
-const Hook = () => {
+const Hook = ({navigation}) => {
     const [number, setNumber]=useState(0)
     useEffect(()=>{
         if(number>10){
@@ -12,12 +12,17 @@ const Hook = () => {
     })
 
     return (
+        <SafeAreaView>
+        <ScrollView style={styles.scrollView}>
         <View style={styles.contain}>
+        
+           
             <View style={styles.container}>
+            <TouchableOpacity  onPress={()=> navigation.navigate('Cart')}>
                 <Image 
                     source = {{uri: 'https://i.insider.com/5e28781062fa81138849a27a'}}
                     style= {styles.item}/>
-                
+            </TouchableOpacity>    
                 
                 <View style={styles.hook}>
                     <Text style={styles.info}> AloeVera & Coconut</Text>
@@ -25,16 +30,8 @@ const Hook = () => {
                     <Text style={{paddingHorizontal:5, fontSize:15, }}>Shampoo (250ml) + </Text>
                     <Text style={{paddingHorizontal:5, fontSize:15, }}>Conditioner (250ml) </Text>
                     <Text style={{paddingHorizontal:5, fontSize:15, }}>Combo </Text>
-                    <Text style={{paddingHorizontal:5, fontSize:15, fontWeight:'bold'}}>170/- </Text>
-                    <View style={styles.direction}>
-                        <TouchableOpacity onPress={() =>setNumber(number+1)}>
-                            <Text style= {styles.button}> +   </Text>
-                        </TouchableOpacity>
-                            <Text style= {styles.answer}>{number}</Text>
-                        <TouchableOpacity onPress={() =>setNumber(number-1)}>
-                            <Text style= {styles.button}>   - </Text>
-                        </TouchableOpacity>
-                    </View>
+             
+                    
                 </View>
             </View>
 
@@ -49,16 +46,8 @@ const Hook = () => {
                     <Text style={{paddingHorizontal:5, fontSize:15, }}>Shampoo (250ml) + </Text>
                     <Text style={{paddingHorizontal:5, fontSize:15, }}>Conditioner (250ml) </Text>
                     <Text style={{paddingHorizontal:5, fontSize:15, }}>Combo </Text>
-                    <Text style={{paddingHorizontal:5, fontSize:15, fontWeight:'bold'}}>200/- </Text>
-                    <View style={styles.direction}>
-                        <TouchableOpacity >
-                            <Text style= {styles.button}> +   </Text>
-                        </TouchableOpacity>
-                            <Text style= {styles.answer}>0</Text>
-                        <TouchableOpacity>
-                            <Text style= {styles.button}>   - </Text>
-                        </TouchableOpacity>
-                    </View>
+                   
+                    
                 </View>
             </View>
 
@@ -70,26 +59,38 @@ const Hook = () => {
             
                 <View style={styles.hook}>
                     <Text style={styles.info}> Mix fruits</Text>
-                    <Text style={styles.info}> Rose Silk</Text>
                     <Text style={{paddingHorizontal:5, fontSize:15, }}>Shampoo (250ml) + </Text>
                     <Text style={{paddingHorizontal:5, fontSize:15, }}>Conditioner (250ml) </Text>
                     <Text style={{paddingHorizontal:5, fontSize:15, }}>Combo </Text>
-                    <Text style={{paddingHorizontal:5, fontSize:15, fontWeight:'bold'}}>250/- </Text>
-                    <View style={styles.direction}>
-                        <TouchableOpacity >
-                            <Text style= {styles.button}> +   </Text>
-                        </TouchableOpacity>
-                            <Text style= {styles.answer}>0</Text>
-                        <TouchableOpacity >
-                            <Text style= {styles.button}>   - </Text>
-                        </TouchableOpacity>
-                    </View>
+                    
                 </View>
             </View>
-            <TouchableOpacity style= {styles.submitButton} onPress={()=> navigation.navigate('Hook')}>
+
+
+            <View style={styles.container}>
+                <Image 
+                    source = {{uri: 'https://hellosubscription.com/wp-content/uploads/2021/07/image_6101624020f61.png?quality=100?quality=90&strip=all'}}
+                    style= {styles.item}/>
+                
+            
+                <View style={styles.hook}>
+                    <Text style={styles.info}> Orange Pearl</Text>
+                    <Text style={{paddingHorizontal:5, fontSize:15, }}>Shampoo (250ml) + </Text>
+                    <Text style={{paddingHorizontal:5, fontSize:15, }}>Conditioner (250ml) </Text>
+                    <Text style={{paddingHorizontal:5, fontSize:15, }}>Combo </Text>
+                    
+                </View>
+            </View>
+
+
+
+            <TouchableOpacity style= {styles.submitButton} onPress={()=> navigation.navigate('Cart')}>
                <Text style={styles.submitButtonText}>Add to Cart</Text>
             </TouchableOpacity> 
-         </View>
+        </View>
+
+         </ScrollView>
+         </SafeAreaView>
     )
 }
 
@@ -106,12 +107,14 @@ const styles = StyleSheet.create({
     },
     container:{
         alignContent: 'center',
+        paddingBottom:20,
         flex:1,
         flexDirection:"row",
+        
     },
     item:{
-        width: 150,
-        height:150,
+        width: 120,
+        height:120,
         justifyContent: 'center'
     },
     info:{

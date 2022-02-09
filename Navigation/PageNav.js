@@ -7,6 +7,9 @@ import HairProducts from '../Pages/HairProducts';
 import SkinProducts from '../Pages/SkinProducts';
 import Hook from '../Pages/Hook';
 import Counter from '../ReduxPages/Counter';
+import Cart from '../Pages/Cart';
+import Details from '../Pages/Details';
+
 
 
 
@@ -24,6 +27,8 @@ const PageNav = () => {
         <Stack.Screen name="SkinProducts" component={SkinProducts} options={{headerShown:false}} />
         <Stack.Screen name="Counter" component={Counter} options={{headerShown:false}}/>
         <Stack.Screen name="Hook" component={Hook} options={{headerShown:false}} />
+        <Stack.Screen name="Cart" component={Cart} options={{headerShown:false}} />
+        <Stack.Screen name="Details" component={Details} options={{headerShown:false}} />
       </Stack.Navigator>
     )
 }
