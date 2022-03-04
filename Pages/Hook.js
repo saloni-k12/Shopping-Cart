@@ -2,23 +2,20 @@ import React, {useState, useEffect} from 'react'
 import { StyleSheet,SafeAreaView, ScrollView, Text, View, Image, TouchableOpacity } from 'react-native'
 
 const Hook = ({navigation}) => {
-    const [number, setNumber]=useState(0)
-    useEffect(()=>{
-        if(number>10){
-            console.warn("Your cart is full")
-        }
-
-        
-    })
+    
 
     return (
         <SafeAreaView>
         <ScrollView style={styles.scrollView}>
         <View style={styles.contain}>
-        
-           
+        <TouchableOpacity>
+        <Image 
+            source = {{uri: 'https://www.iconsdb.com/icons/preview/color/0A8C86/user-xxl.png'}}
+            style= {styles.userImage}/>
+            </TouchableOpacity>
+            
             <View style={styles.container}>
-            <TouchableOpacity  onPress={()=> navigation.navigate('Cart')}>
+            <TouchableOpacity  onPress={()=> navigation.navigate('AloenCoco')}>
                 <Image 
                     source = {{uri: 'https://i.insider.com/5e28781062fa81138849a27a'}}
                     style= {styles.item}/>
@@ -30,6 +27,9 @@ const Hook = ({navigation}) => {
                     <Text style={{paddingHorizontal:5, fontSize:15, }}>Shampoo (250ml) + </Text>
                     <Text style={{paddingHorizontal:5, fontSize:15, }}>Conditioner (250ml) </Text>
                     <Text style={{paddingHorizontal:5, fontSize:15, }}>Combo </Text>
+                    <TouchableOpacity onPress={() =>navigation.navigate('Cart')}>
+                        <Text style={{ paddingHorizontal:5, fontSize:20, color: '#0a8c86', fontWeight:'600'}}>Add</Text>
+                    </TouchableOpacity>
              
                     
                 </View>
@@ -91,6 +91,7 @@ const Hook = ({navigation}) => {
 
          </ScrollView>
          </SafeAreaView>
+         
     )
 }
 
@@ -158,5 +159,9 @@ const styles = StyleSheet.create({
      submitButtonText:{
         color: 'white',
         fontWeight: 'bold',
+     },
+     userImage:{
+        width: 30,
+        height:30,
      }
 })

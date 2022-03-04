@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View , TouchableOpacity, Image} from 'react-native'
 import {useSelector, useDispatch} from 'react-redux';
-import {increment,decrement,clear} from '../ReduxPages/ActionCounter'
+import {increment,decrement} from '../ReduxPages/ActionCounter'
 
 const Counter = ({navigation}) => {
     const data = useSelector((state) => state.count);
@@ -19,7 +19,7 @@ const Counter = ({navigation}) => {
                     <Text style={styles.details}>Aloe Vera & Coconut Volume Hair Shampoo + Conditioner Combo</Text>
                     <View style={styles.direction}>
                         <TouchableOpacity onPress={() =>dispatch(increment())}>
-                            <Text style= {styles.button}> + </Text>
+                            <Text style= {styles.button}> +</Text>
                         </TouchableOpacity>
                             <Text style= {styles.answer}>{data}</Text>
                         <TouchableOpacity onPress={() =>dispatch(decrement())}>
@@ -29,28 +29,9 @@ const Counter = ({navigation}) => {
                 </View>
                 
             </View>
-            <View style={styles.container}>
-                <Image 
-                    source = {{uri: 'https://res.cloudinary.com/jerrick/image/upload/v1572018261/5db318556c8529001dc0a310.png'}}
-                    style= {styles.item}/>
-                
             
-                <View style={styles.hook}>
-                    <Text style={styles.info}> Rose Silk</Text>
-                    <View style={styles.direction}>
-                        <TouchableOpacity onPress={() =>dispatch(increment())}>
-                            <Text style= {styles.button}> + </Text>
-                        </TouchableOpacity>
-                            <Text style= {styles.answer}>{data}</Text>
-                        <TouchableOpacity onPress={() =>dispatch(decrement())}>
-                            <Text style= {styles.button}> - </Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-            </View>
-
             <TouchableOpacity style= {styles.submitButton} onPress={()=> navigation.navigate('Hook')}>
-                  <Text style={styles.submitButtonText}>Next</Text>
+                  <Text style={styles.submitButtonText}>Add Friend</Text>
                   </TouchableOpacity> 
         </View>
     )

@@ -1,15 +1,10 @@
+import {INCREMENT} from './constant';
+import {DECREMENT} from './constant';
 
-import {INCREMENT,DECREMENT,CLEAR} from './constant';
+export const increment =() =>({
+  type: INCREMENT,
+})
 
-
- export const increment =() =>({
-     type:INCREMENT,
- });
-
- export const decrement =() =>({
-     type:DECREMENT,
- });
-
-export const clear =() =>({
-    type:CLEAR,
-});
+export const decrement =() =>({
+  type: DECREMENT,
+})

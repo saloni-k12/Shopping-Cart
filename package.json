@@ -13,14 +13,18 @@
     "@react-native-community/checkbox": "^0.5.9",
     "@react-native-community/hooks": "^2.8.1",
     "@react-native-masked-view/masked-view": "^0.2.6",
+    "@react-navigation/drawer": "^6.3.1",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
     "react": "17.0.2",
     "react-native": "0.66.4",
+    "react-native-gesture-handler": "^2.2.0",
+    "react-native-reanimated": "^2.4.1",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.10.1",
     "react-native-vector-icons": "^9.0.0",
     "react-redux": "^7.2.6",
+    "realm": "^10.13.0",
     "redux": "^4.1.2"
   },
   "devDependencies": {

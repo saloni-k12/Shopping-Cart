@@ -2,14 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 
 const Hook = ({navigation}) => {
-    const [number, setNumber]=useState(0)
-    useEffect(()=>{
-        if(number>10){
-            console.warn("Your cart is full")
-        }
-
-        
-    })
+    
 
     return (
         <View style={styles.contain}>
@@ -23,16 +16,7 @@ const Hook = ({navigation}) => {
                 
                 <View style={{paddingLeft:15}}>
                     <Text style={{fontSize:18,fontWeight:'bold',color:'#0a8c86'}}> AloeVera & Coconut</Text>
-                    <Text style={{paddingHorizontal:5, fontSize:15, fontWeight:'bold'}}>170/- </Text>
-                    <View style={{flexDirection:'row'}}>
-                        <TouchableOpacity onPress={() =>setNumber(number+1)}>
-                            <Text style= {styles.button}> +   </Text>
-                        </TouchableOpacity>
-                            <Text style= {styles.answer}>{number}</Text>
-                        <TouchableOpacity onPress={() =>setNumber(number-1)}>
-                            <Text style= {styles.button}>   - </Text>
-                        </TouchableOpacity>
-                    </View>
+                    <Text style={{paddingHorizontal:5, fontSize:15, fontWeight:'bold'}}>170/- </Text>  
                 </View>
             </View>
 
@@ -46,15 +30,7 @@ const Hook = ({navigation}) => {
                 <View style={{paddingLeft:15}}>
                     <Text style={{fontSize:18,fontWeight:'bold',color:'#0a8c86'}}> Rose Silk</Text>
                     <Text style={{paddingHorizontal:5, fontSize:15, fontWeight:'bold'}}>250/- </Text>
-                    <View style={{flexDirection:'row'}}>
-                        <TouchableOpacity onPress={() =>setNumber(number+1)}>
-                            <Text style= {styles.button}> +   </Text>
-                        </TouchableOpacity>
-                            <Text style= {styles.answer}>{number}</Text>
-                        <TouchableOpacity onPress={() =>setNumber(number-1)}>
-                            <Text style= {styles.button}>   - </Text>
-                        </TouchableOpacity>
-                    </View>
+                    
                 </View>
             </View>
             <View style={{paddingVertical:10,paddingHorizontal:20, flexDirection:'row',alignItems:'center',backgroundColor:"#d9d7d7", marginBottom:15}}>

@@ -1,4 +1,5 @@
-import {INCREMENT, DECREMENT} from './constant';
+import {store} from '../ReduxPages/store';
+import { combineReducers } from 'redux';
 
 const INITIAL_STATE = {
   count:0
@@ -6,11 +7,11 @@ const INITIAL_STATE = {
 
 export const reducerCounter = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case INCREMENT:
+    case 'INCREMENT':
         return {...state, count: state.count + 1};
     case DECREMENT:
       return {...state, count: state.count - 1};
     default:
       return state;
-  }
+ }
 }
