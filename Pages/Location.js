@@ -114,6 +114,8 @@ const Location = ({navigation}) => {
             <View style={{padding:15}}>
                {
                   location.map((location,loc) => {
+                     
+
                      return(
                         <View key={loc}>
                            <Text style={{fontSize:14}}> {location.address} </Text>

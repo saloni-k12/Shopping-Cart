@@ -1,0 +1,3 @@
+export const GET_DATA = "GET_DATA";
+export const DATA_FETCHED_SUCCESSFUL = "DATA_FETCHED_SUCCESSFUL";
+export const ERROR ="ERROR";
